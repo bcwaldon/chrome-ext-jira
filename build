@@ -1,0 +1,4 @@
+#!/bin/bash
+pushd ext/
+zip -r ../chrome-ext-jira.zip *
+popd
