@@ -1,3 +1,7 @@
+chrome.runtime.onInstalled.addListener(function (object) {
+	chrome.tabs.create({ 'url': 'chrome://extensions/?options=' + chrome.runtime.id });
+});
+
 function go(issue) {
 	chrome.storage.sync.get("options", function(val) {
 		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
