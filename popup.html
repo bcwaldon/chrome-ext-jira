@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<title>JIRA Issue Navigator</title>
+		<script src="core.js"></script>
+	</head>
+	<body>
+		<input id="search" type="text" size=15 />
+	</body>
+	<script type="text/javascript">
+		// watch for Enter keypress in extension popup
+		document.addEventListener('DOMContentLoaded', function() {
+			var el = document.getElementById('search');
+			el.addEventListener('keypress', function (e) {
+				var key = e.which || e.keyCode;
+				if (key === 13) { // 13 is enter
+					window.close(); // close the popup manually
+					go(el.value);
+				}
+			});
+		}, false);
+	</script>
+</html>
